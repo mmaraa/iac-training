@@ -1,0 +1,25 @@
+trigger:
+  - none
+
+parameters:
+  - name: 'resourceGroupName'
+    type: string
+    default: 'rg-ado-pipeline-example2-dev'
+
+pool:
+  vmImage: 'windows-latest'
+
+jobs:
+  - job: 'DeployToAzure'
+    displayName: 'Deploy to Azure'
+    steps:
+      - task: AzurePowerShell@5
+        name: DeployAzureIac
+        displayName: 'Deploy Azure IaC'
+        inputs:
+          azurePowerShellVersion: LatestVersion
+          azureSubscription: 'AzureIacTraining'
+          scriptType: 'InlineScript'
+          errorActionPreference: 'stop'
+          Inline:  |
+            New-AzDeployment -Location 'swedencentral' -templateFile 'infra\subDeployment.bicep' -rgName ${{ parameters.resourceGroupName }}
