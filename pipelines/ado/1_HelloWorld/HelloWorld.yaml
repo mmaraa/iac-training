@@ -8,4 +8,4 @@ jobs:
   - job: HelloWorld
     steps:
       - script: echo Hello, world!
-      - script: 'echo Hello, this build name is: $(Build.DefinitionName)!'
+      - script: 'echo Name of this pipeline is: $(Build.DefinitionName)!'
