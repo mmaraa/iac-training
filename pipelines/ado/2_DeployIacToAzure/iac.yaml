@@ -22,4 +22,4 @@ jobs:
           scriptType: 'InlineScript'
           errorActionPreference: 'stop'
           Inline:  |
-            New-AzDeployment -Location 'swedencentral' -templateFile 'infra\subDeployment.bicep' -rgName ${{ parameters.resourceGroupName }}
+            New-AzDeployment -Location 'swedencentral' -templateFile 'pipelines\ado\2_DeployIacToAzure\infra\subDeployment.bicep' -rgName ${{ parameters.resourceGroupName }}
