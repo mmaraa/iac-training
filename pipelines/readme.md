@@ -13,5 +13,5 @@ Pipelines & Azure is a 2-hour hands-on session designed for students who already
     - Connecting to different services during pipeline runs
 4. Deploying iac-files using pipelines
     - IaC to Azure using pipelines
-5. Stages, Deployments, Jobs, Tasks
-    - Phasing deployments, using tasks
+5. Stages and other Azure DevOps pipeline concepts
+    - Phasing deployments, environments, libraries, artifacts etc.
